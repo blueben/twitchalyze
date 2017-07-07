@@ -1,0 +1,5 @@
+{
+  "api_url": "https://api.twitch.tv/kraken",
+  "client_id": "YOUR_ID_HERE",
+  "record_limit": "25"
+}
