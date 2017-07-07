@@ -20,6 +20,10 @@ S.headers.update({
     'Client-ID': CONFIG["client_id"],
     'Accept': 'application/vnd.twitchtv.v5+json'
 })
+S.params.update({
+    'limit': CONFIG["record_limit"],
+    'offset': 0
+})
 
 
 def _url(path):
@@ -36,11 +40,8 @@ def streams(channel, game, stream_type):
     https://dev.twitch.tv/docs/v5/reference/streams/#get-live-streams
     """
     query = {
-        'channel': channel,
+        'channel': ','.join(channel),
         'game': game,
-        'type': stream_type,
-        'limit': CONFIG["record_limit"],
-        'offset': 0
+        'type': stream_type
     }
-
     return S.get(_url('/streams/'), params=query)
