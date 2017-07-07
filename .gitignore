@@ -1,0 +1,8 @@
+
+# Ignore the following items
+
+twitchalyze_env/**
+
+# Include the following items
+
+!twitchalyze_env/pyvenv.cfg
