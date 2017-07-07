@@ -1,7 +1,7 @@
 
 # Ignore the following items
 
-twitchalyze_env/**
+.twitchalyze_env/**
 
 # Include the following items
 
