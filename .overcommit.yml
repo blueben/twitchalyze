@@ -41,7 +41,7 @@ PreCommit:
 
 PrePush:
   Pytest:
-    enabled: true
+    enabled: false
 
 PostCheckout:
   ALL: # Special hook name that customizes all hooks of this type
