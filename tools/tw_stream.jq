@@ -11,12 +11,12 @@
   (
     { stats:
       (
-        ( map(._total?) 
+        ( map(._total?)
           | first ) as $streamcount
 
         | .
-          | map(.streams[]? 
-          | .viewers) 
+          | map(.streams[]?
+          | .viewers)
           | (reduce .[] as $i (0; . + $i)) as $viewercount
 
         | { streamers_online: $streamcount,
@@ -24,18 +24,18 @@
         )
     }
   ),
-  ( 
-    { streams_live: 
+  (
+    { streams_live:
       map(.streams[]?
-      | { channel: .channel.display_name, 
+      | { channel: .channel.display_name,
           playing: .game,
-          status: .channel.status, 
-          start: .created_at, 
-          viewers: .viewers, 
+          status: .channel.status,
+          start: .created_at,
+          viewers: .viewers,
           stream_type: .stream_type,
           followers: .channel.followers,
-          partner: .channel.partner, 
-          url: .channel.url, 
+          partner: .channel.partner,
+          url: .channel.url,
           description: .channel.description } )
     }
   )
